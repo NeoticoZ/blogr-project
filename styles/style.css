@@ -137,6 +137,10 @@ nav {
   height: 7px;
 }
 
+.principal .icon-light {
+  display: none;
+}
+
 .principal::after {
   content: '';
   display: block;
@@ -417,9 +421,22 @@ nav.show .menu-hamburger {
   width: 100%;
 }
 
-.features .img img {
+.features .img .mobile {
   width: 100%;
   height: auto;
+
+  max-width: 498px;
+  max-height: 359px;
+}
+
+.features .img .desktop {
+  width: 100%;
+  height: auto;
+
+  max-width: 974px;
+  height: 786px;
+
+  display: none;
 }
 
 .features .text {
@@ -437,7 +454,7 @@ nav.show .menu-hamburger {
   line-height: 1.8rem;
 }
 
-/* ==== FEATURES ============================*/
+/* ==== FOOTER ============================*/
 footer {
   background: var(--footer-background);
   color: var(--text-white);
@@ -445,11 +462,13 @@ footer {
 
   padding: 4rem 0;
 
+  border-radius: 0 7rem 0 0;
+}
+
+footer .container {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-
-  border-radius: 0 7rem 0 0;
 }
 
 footer a:hover {
@@ -508,6 +527,14 @@ footer a img {
 
   .menu ul a {
     color: var(--text-white);
+  }
+
+  .principal .icon-light {
+    display: inline-block;
+  }
+
+  .principal .icon-dark {
+    display: none;
   }
 
   .principal::after {
@@ -607,7 +634,7 @@ footer a img {
     height: 25rem;
 
     background-position: -90% 80%;
-    background-size: 77%;
+    background-size: 78%;
   }
 
   .info .container {
@@ -618,5 +645,73 @@ footer a img {
 
   .info .img {
     top: 1rem;
+  }
+
+  .info .text {
+    text-align: start;
+    margin-left: 3rem;
+  }
+
+  .info .text h2 {
+    font-size: 2.2rem;
+  }
+
+  /* Features */
+  .features {
+    margin-bottom: 12rem;
+
+    position: relative;
+
+    text-align: start;
+
+    height: 100vh;
+  }
+
+  .features .container {
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-areas: 'IMG TXT' 'IMG TXT';
+  }
+
+  .features .img {
+    position: absolute;
+    top: 0;
+    left: -17rem;
+
+    grid-area: IMG;
+
+    width: auto;
+  }
+
+  .features .img .mobile {
+    display: none;
+  }
+
+  .features .img .desktop {
+    display: block;
+  }
+
+  .features .features-text {
+    grid-area: TXT;
+
+    margin-top: 12rem;
+  }
+
+  .features .features-text .text {
+    margin-bottom: 4rem;
+  }
+
+  /* Footer */
+  footer .container {
+    margin: 0 auto;
+    text-align: start;
+
+    flex-direction: row;
+    justify-content: space-between;
+
+    gap: 0;
   }
 }
