@@ -597,26 +597,26 @@ footer a img {
       'HD HD'
       'TXT IMG';
   }
-}
 
-/* Info */
-.info {
-  margin-top: 12rem;
-  padding-bottom: 0;
-  place-content: center;
+  /* Info */
+  .info {
+    margin-top: 12rem;
+    padding-bottom: 0;
+    place-content: center;
 
-  height: 25rem;
+    height: 25rem;
 
-  background-position: -90% 80%;
-  background-size: 77%;
-}
+    background-position: -90% 80%;
+    background-size: 77%;
+  }
 
-.info .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-}
+  .info .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
 
-.info .img {
-  top: 1rem;
+  .info .img {
+    top: 1rem;
+  }
 }
