@@ -56,7 +56,6 @@ button {
 /* ==== BASE ============================*/
 body {
   background: #fafafa;
-  overflow-x: hidden;
 
   font-family: var(--overpass);
 }
@@ -332,13 +331,15 @@ nav.show .menu-hamburger {
 }
 
 /* ==== ABOUT ============================*/
-.about .container {
-  margin: 0;
-}
-
 .about {
   text-align: center;
-  margin-bottom: 14rem;
+  margin-bottom: 10rem;
+
+  overflow: hidden;
+}
+
+.about .container {
+  margin: 0;
 }
 
 .about header {
@@ -522,6 +523,7 @@ footer a img {
 
 /* MEDIA QUERIES */
 @media (min-width: 500px) {
+  /* About */
   .about {
     margin-bottom: 20rem;
   }
@@ -632,7 +634,7 @@ footer a img {
   .hero {
     background: url('../images/bg-pattern-intro.svg') no-repeat 27% 54%/3200px,
       linear-gradient(100deg, var(--very-light-red), var(--light-red));
-    height: 90vh;
+    height: 35rem;
     margin-bottom: 4rem;
   }
 
@@ -643,7 +645,9 @@ footer a img {
   /* About */
   .about {
     position: relative;
-    margin-bottom: 5rem;
+    margin-bottom: 0;
+
+    height: 882px;
   }
 
   .about header {
@@ -694,7 +698,7 @@ footer a img {
 
   /* Info */
   .info {
-    margin-top: 12rem;
+    margin-top: 4rem;
     padding-bottom: 0;
     place-content: center;
 
@@ -725,13 +729,13 @@ footer a img {
 
   /* Features */
   .features {
-    margin-bottom: 12rem;
+    margin-bottom: 4rem;
 
     position: relative;
 
     text-align: start;
 
-    height: 100vh;
+    height: 786px;
   }
 
   .features .container {
