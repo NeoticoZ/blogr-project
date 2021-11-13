@@ -634,7 +634,7 @@ footer a img {
   .hero {
     background: url('../images/bg-pattern-intro.svg') no-repeat 27% 54%/3200px,
       linear-gradient(100deg, var(--very-light-red), var(--light-red));
-    height: 35rem;
+    height: 37rem;
     margin-bottom: 4rem;
   }
 
