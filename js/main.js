@@ -19,3 +19,12 @@ for (let link of links) {
     link.classList.toggle('show')
   })
 }
+
+// Para de exibir o dropdown ao clicar por fora
+window.onclick = function (event) {
+  if (!event.target.matches('.principal li button span')) {
+    for (let i = 0; i < links.length; i++) {
+      links[i].classList.remove('show')
+    }
+  }
+}

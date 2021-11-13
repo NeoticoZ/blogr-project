@@ -18,6 +18,12 @@ img {
   height: auto;
 }
 
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
 /* ==== VARIABLES ============================*/
 :root {
   /* Primary */
@@ -40,7 +46,7 @@ img {
   --very-dark-desaturated-blue: hsl(237, 23%, 32%);
 
   /* Body Copy */
-  --font-size: 16px;
+  --font-size: 1rem;
 
   /* Fonts */
   --overpass: 'Overpass', sans-serif;
@@ -49,9 +55,14 @@ img {
 
 /* ==== BASE ============================*/
 body {
-  font-family: var(--overpass);
   background: #fafafa;
   overflow-x: hidden;
+
+  font-family: var(--overpass);
+}
+
+button {
+  font-size: 1rem;
 }
 
 .container {
@@ -115,6 +126,7 @@ nav {
   text-align: center;
 }
 
+.menu ul button,
 .menu ul a {
   color: var(--headings);
 
@@ -122,19 +134,30 @@ nav {
   align-items: center;
 
   font-weight: 600;
+  cursor: pointer;
+
+  font-family: var(--ubuntu);
 }
 
-.principal a:hover {
+.principal li {
+  position: relative;
+}
+
+.principal button:hover {
   text-decoration: underline;
 }
 
-.principal a span {
+.principal button span {
   margin-right: 0.25rem;
 }
 
-.principal a img {
+.principal button img {
   width: 10px;
   height: 7px;
+}
+
+.principal .icon-dark {
+  display: inline-block;
 }
 
 .principal .icon-light {
@@ -203,11 +226,11 @@ nav.show .menu-hamburger {
 }
 
 /* Prepara o link para o dropdown */
-.principal li.show a img {
+.principal li.show button img {
   transform: rotate(180deg);
 }
 
-.principal li.show a {
+.principal li.show button {
   opacity: 0.9;
 }
 
@@ -216,7 +239,7 @@ nav.show .menu-hamburger {
 }
 
 /* Dropdown */
-.dropdown-content {
+.principal .dropdown-content {
   display: none;
   gap: 1rem;
   place-content: center;
@@ -235,11 +258,11 @@ nav.show .menu-hamburger {
   transition: 0.2s;
 }
 
-.dropdown-content a {
+.principal .dropdown-content a {
   justify-content: center;
 }
 
-.dropdown-content a:hover {
+.principal .dropdown-content a:hover {
   color: black;
   text-decoration: none;
 }
@@ -410,6 +433,7 @@ nav.show .menu-hamburger {
 /* ==== FEATURES ============================*/
 .features {
   text-align: center;
+  margin-bottom: 6rem;
 }
 
 .features .container {
@@ -497,6 +521,12 @@ footer a img {
 }
 
 /* MEDIA QUERIES */
+@media (min-width: 500px) {
+  .about {
+    margin-bottom: 20rem;
+  }
+}
+
 @media (min-width: 1200px) {
   /* Base */
   .container {
@@ -523,9 +553,18 @@ footer a img {
 
   .menu ul {
     display: flex;
+
+    gap: 2rem;
   }
 
+  .menu .principal button,
   .menu ul a {
+    color: #f0f0f0;
+
+    font-weight: 500;
+  }
+
+  .menu .principal button:hover {
     color: var(--text-white);
   }
 
@@ -559,6 +598,34 @@ footer a img {
 
   .menu-hamburger {
     display: none;
+  }
+
+  .menu-close {
+    display: none;
+  }
+
+  /* Dropdown */
+  .principal .dropdown-content {
+    background: var(--text-white);
+    opacity: 1;
+
+    position: absolute;
+    top: 1rem;
+    left: -2.8rem;
+    width: 10rem;
+
+    place-content: initial;
+    padding-left: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .principal .dropdown-content a {
+    color: var(--body-copy);
+
+    font-weight: 500;
+
+    justify-content: start;
   }
 
   /* Hero */
